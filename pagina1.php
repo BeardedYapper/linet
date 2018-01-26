@@ -1,16 +1,34 @@
+<?php
+header("Content-Type: aplication/vnd.ms-excel");
+header("Expire: 0");
+header("Cache-control: must-revalidate, post-check=0, pre-check=0");
+header("content-disposition: attachment;filename=Reportes.xls");
+?>
+
+
 <html>
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Reporte</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 </head>
 <body>
-    <h1>CREAR REPORTE</h1>
-<?php
+    <form action="reporte"
+    name="formReport"
+    id="report"
+    method="post">
 
+    <input type="buton"
+    value= "Reporte"
+    id="btnReport"
+    onClick="conexion">
+
+<div clas= "conexion">
+<?php
 $servidor = "localhost";
 $usuario = "root";
 $contrasena = "ED222felipe";
@@ -34,127 +52,75 @@ $resultado = mysqli_query($conexion, $sql_query);
 if(!$resultado)
 die("Error no se pudo realizar la consulta");
 
+
 echo'<table>';
-while($row=mysqli_fetch_array($resultado)){?>
 
-    <div class="box-content">
+?>
+
+<div class="box-content">
     <table>
-    <tr>
-        <td><strong> Distrito </strong></td>
-        <td> <?php echo $row['distrito'] ?> </td>
-    </tr>
-    <tr>
-        <td><strong> Cliente </strong></td>
-        <td> <?php echo $row['nombre'] ?>
-    </tr>
-    <tr>
-        <td><strong> Telefono </strong></td>
-        <td> <?php echo $row['telefono'] ?> </td>
-    </tr>    
+<tr>
+<td><b>DISTRITO</b></td>
+<td><b>CLIENTE</b></td>
+<td><b>TELEFONO</b></td>
+<td><b>O.S</b></td>
+<td><b>TIPO O.S</b></td>
+<td><b>PISAPLEX</b></td>
+<td><b>TECNICO</b></td>
+<td><b>EXPEDIENTE</b></td>
+<td><b>TERMINAL OPTICA</b></td>
+<td><b>DISTRITO</b></td>
+<td><b>PUERTO</b></td>
+<td><b>ONT ALFANUMERICO</b></td>
+<td><b>ONT NUMERICO</b></td>
+<td><b>FOLIO CLARO</b></td>
+<td><b>STATUS</b></td>
+<td><b>OBSERVACIONES</b></td>
+<td><b>FOLIO TEK</b></td>
+<td><b>PORTALERO</b></td>
+<td><b>SUPERVISOR</b></td>
+<td><b>METROS AEREOS</b></td>
+<td><b>METROS SUBTERRANEOS</b></td>
+<td><b>FECHA</b></td>
+<td><b>STATUS</b></td>
+<td><b>OBSERVACIONES</b></td></b>
+ </tr>
 
-    <tr>
-        <td><strong> O.S </strong></td>
-        <td> <?php echo $row['o.s'] ?> </td>
-    </tr>  
 
-    <tr>
-        <td><strong> Tipo de O.S </strong></td>
-        <td> <?php echo $row['tipo_o.s'] ?> </td>
-    </tr>  
-
-    <tr>
-        <td><strong> Pisaplex </strong></td>
-        <td> <?php echo $row['pisaplex'] ?> </td>
-    </tr>  
-
-    <tr>
-        <td><strong> Técnico </strong></td>
-        <td> <?php echo $row['nombre'] ?> </td>
-    </tr>  
-
-    <tr>
-        <td><strong> Expediente </strong></td>
-        <td> <?php echo $row['Empleados_expediente'] ?> </td>
-    </tr>  
-
-    <tr>
-        <td><strong> Terminal Optica </strong></td>
-        <td> <?php echo $row['terminal_optica'] ?> </td>
-    </tr>  
+<?php
+while($row=mysqli_fetch_array($resultado)){
+printf("<tr>
+<td>&nbsp;%s</td>
+<td>&nbsp;%s</td>
+<td>&nbsp;%s</td>
+<td>&nbsp;%s</td>
+<td>&nbsp;%s</td>
+<td>&nbsp;%s</td>
+<td>&nbsp;%s</td>
+<td>&nbsp;%s</td>
+<td>&nbsp;%s</td>
+<td>&nbsp;%s</td>
+<td>&nbsp;%s</td>
+<td>&nbsp;%s</td>
+<td>&nbsp;%s</td>
+<td>&nbsp;%s</td>
+<td>&nbsp;%s</td>
+<td>&nbsp;%s</td>
+<td>&nbsp;%s</td>
+<td>&nbsp;%s</td>
+<td>&nbsp;%s</td>
+<td>&nbsp;%s</td>
+<td>&nbsp;%s</td>
+<td>&nbsp;%s</td>
+<td>&nbsp;%s</td>
+</tr>",$row['distrito'],$row['nombre'],$row['telefono'],$row['o.s'],$row['tipo_o.s'],$row['pisaplex'],$row['nombre'],$row['Empleados_expediente'],$row['terminal_optica'],$row['puerto'],$row['equipo_ONT_alfanumerico'],$row['ONT_numerico'],$row['claro_folio'],$row['status'],$row['observacion'],$row['folioTek'],$row['portalero'],$row['supervisor'],$row['metros_aereos'],$row['metros_subterraneo'],$row['fecha'],$row['orden_status'],$row['observaciones']);
   
-    <tr>
-        <td><strong> Puerto </strong></td>
-        <td> <?php echo $row['puerto'] ?> </td>
-    </tr>  
+
+}
     
-    <tr>
-        <td><strong> ONT Alfanumerico </strong></td>
-        <td> <?php echo $row['equipo_ONT_alfanumerico'] ?> </td>
-    </tr>  
-
-    <tr>
-        <td><strong> ONT Numerico </strong></td>
-        <td> <?php echo $row['ONT_numerico'] ?> </td>
-    </tr>  
-
-    <tr>
-        <td><strong> Folio Claro </strong></td>
-        <td> <?php echo $row['claro_folio'] ?> </td>
-    </tr>  
-
-    <tr>
-        <td><strong> Status Claro </strong></td>
-        <td> <?php echo $row['status'] ?> </td>
-    </tr>  
-
-    <tr>
-        <td><strong> Observaciones Claro </strong></td>
-        <td> <?php echo $row['observacion'] ?> </td>
-    </tr>  
-    
-    <tr>
-        <td><strong> Folio Tek </strong></td>
-        <td> <?php echo $row['folioTek'] ?> </td>
-    </tr>  
-
-    <tr>
-        <td><strong> Portalero </strong></td>
-        <td> <?php echo $row['portalero'] ?> </td>
-    </tr>  
-
-    <tr>
-        <td><strong> Supervisor </strong></td>
-        <td> <?php echo $row['supervisor'] ?> </td>
-    </tr>  
-
-    <tr>
-        <td><strong> Metros Aereos </strong></td>
-        <td> <?php echo $row['metros_aereos'] ?> </td>
-    </tr>  
-
-    <tr>
-        <td><strong> Metros Subterraneos </strong></td>
-        <td> <?php echo $row['metros_subterraneo'] ?> </td>
-    </tr>  
-
-    <tr>
-        <td><strong> Fecha Liquidada </strong></td>
-        <td> <?php echo $row['fecha'] ?> </td>
-    </tr>  
-
-    <tr>
-        <td><strong> Status </strong></td>
-        <td> <?php echo $row['orden_status'] ?> </td>
-    </tr>  
-
-    <tr>
-        <td><strong> Observacion </strong></td>
-        <td> <?php echo $row['observaciones'] ?> </td>
-    </tr>  
-
-    <?php
-        }
     ?>
-</table>
+</div>
+</div>
+    </table>
 </body>
 </html>
