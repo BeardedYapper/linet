@@ -3,32 +3,7 @@ header("Content-Type: aplication/vnd.ms-excel");
 header("Expire: 0");
 header("Cache-control: must-revalidate, post-check=0, pre-check=0");
 header("content-disposition: attachment;filename=Reportes.xls");
-?>
 
-
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Reporte</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-</head>
-<body>
-    <form action="reporte"
-    name="formReport"
-    id="report"
-    method="post">
-
-    <input type="buton"
-    value= "Reporte"
-    id="btnReport"
-    onClick="conexion">
-
-<div clas= "conexion">
-<?php
 $servidor = "localhost";
 $usuario = "root";
 $contrasena = "ED222felipe";
@@ -51,14 +26,10 @@ join claro on clientes.claro_folio= folio";
 $resultado = mysqli_query($conexion, $sql_query);
 if(!$resultado)
 die("Error no se pudo realizar la consulta");
-
-
-echo'<table>';
-
 ?>
 
 <div class="box-content">
-    <table>
+<table width="50%" border="1" cellpadding="10" cellspacing="0" bordercolor="#666666" id="Exportar_a_Excel" style="border-collapse:collapse;"
 <tr>
 <td><b>DISTRITO</b></td>
 <td><b>CLIENTE</b></td>
@@ -85,7 +56,6 @@ echo'<table>';
 <td><b>STATUS</b></td>
 <td><b>OBSERVACIONES</b></td></b>
  </tr>
-
 
 <?php
 while($row=mysqli_fetch_array($resultado)){
@@ -114,10 +84,7 @@ printf("<tr>
 <td>&nbsp;%s</td>
 <td>&nbsp;%s</td>
 </tr>",$row['distrito'],$row['nombre'],$row['telefono'],$row['o.s'],$row['tipo_o.s'],$row['pisaplex'],$row['nombre'],$row['Empleados_expediente'],$row['terminal_optica'],$row['puerto'],$row['equipo_ONT_alfanumerico'],$row['ONT_numerico'],$row['claro_folio'],$row['status'],$row['observacion'],$row['folioTek'],$row['portalero'],$row['supervisor'],$row['metros_aereos'],$row['metros_subterraneo'],$row['fecha'],$row['orden_status'],$row['observaciones']);
-  
-
 }
-    
     ?>
 </div>
 </div>
