@@ -77,7 +77,7 @@ while($row=mysqli_fetch_array($resultado)){
 <td><?php echo $row['fecha']; ?></td>
 <td><?php echo $row['orden_status']; ?></td>
 <td><?php echo $row['observaciones']; ?></td>
-<td><img src="<?php echo $row['ONT_foto']; ?>"></td>
+<td><img src="<?php echo $row['equipo.ONT_foto']; ?>"></td>
 </tr>
 
 <?php
