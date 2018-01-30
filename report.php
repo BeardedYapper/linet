@@ -6,6 +6,8 @@
 <body>
 <div class="container">
 <table align="center">
+<br>
+<br>
 <div class="text-center" style="padding:50px">
 <div class="Jumbotron">
 <h1>GENERAR REPORTE DE ORDENES</h1>

@@ -21,37 +21,42 @@ die("Error no se pudo realizar la consulta");
 
 ?>
 
-<table width="50%" border="1" cellpadding="10" cellspacing="0" bordercolor="#666666" style="border-collapse:collapse" text-align:center>
+<table width="50%" border="1" cellpadding="10" cellspacing="1" bordercolor="#666666" style="border-collapse:collapse">
 <tr>
-<th><b>DISTRITO</b></th>
-<th><b>CLIENTE</b></th>
-<th><b>TELEFONO</b></th>
-<th><b>O.S</b></th>
-<th><b>TIPO O.S</b></th>
-<th><b>PISAPLEX</b></th>
-<th><b>TECNICO</b></th>
-<th><b>EXPEDIENTE</b></th>
-<th><b>TERMINAL OPTICA</b></th>
-<th><b>PUERTO</b></th>
-<th><b>ONT ALFANUMERICO</b></th>
-<th><b>ONT NUMERICO</b></th>
-<th><b>FOLIO CLARO</b></th>
-<th><b>STATUS</b></th>
-<th><b>OBSERVACIONES</b></th>
-<th><b>FOLIO TEK</b></th>
-<th><b>PORTALERO</b></th>
-<th><b>SUPERVISOR</b></th>
-<th><b>METROS AEREOS</b></th>
-<th><b>METROS SUBTERRANEOS</b></th>
-<th><b>FECHA</b></th>
-<th><b>STATUS</b></th>
-<th><b>OBSERVACIONES</b></th>
-<th><b>FOTO ONT</b></th>
+<th>FILIAL/CONTRATISTA</th>
+<th>AREA</th>
+<th>COPE</th>
+<th>DISTRITO</th>
+<th>CLIENTE</th>
+<th>TELEFONO</th>
+<th>O.S</th>
+<th>TIPO O.S</th>
+<th>PISAPLEX</th>
+<th>TECNICO</th>
+<th>EXPEDIENTE</th>
+<th>TERMINAL OPTICA</th>
+<th>PUERTO</th>
+<th>ONT ALFANUMERICO</th>
+<th>ONT NUMERICO</th>
+<th>FOLIO CLARO</th>
+<th>STATUS</th>
+<th>OBSERVACIONES</th>
+<th>FOLIO TEK</th>
+<th>PORTALERO</th>
+<th>SUPERVISOR</th>
+<th>METROS AEREOS</th>
+<th>METROS SUBTERRANEOS</th>
+<th>FECHA</th>
+<th>STATUS</th>
+<th>OBSERVACIONES</th>
+<th>FOTO ONT</th>
  </tr>
-
 <?php
 while($row=mysqli_fetch_array($resultado)){   ?>
 <tr>
+<td>ENLACE DIGITAL</td>
+<td>MERIDA</td>
+<td>BUENAVISTA</td>
 <td><?php echo $row['distrito']; ?> </td>
 <td><?php echo $row['nombre']; ?></td>
 <td><?php echo $row['telefono']; ?></td>
@@ -75,7 +80,7 @@ while($row=mysqli_fetch_array($resultado)){   ?>
 <td><?php echo $row['fecha']; ?></td>
 <td><?php echo $row['orden_status']; ?></td>
 <td><?php echo $row['observaciones']; ?></td>
-<td><img src="<?php echo $row['foto_ONT'] ?>" width="100" height="50"/></td>
+<td><?php echo $row['foto_ONT']; ?></td>
 </tr>
 
 <?php
