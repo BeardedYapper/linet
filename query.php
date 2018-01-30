@@ -18,41 +18,39 @@ $sql_query = "SELECT distrito,clientes.nombre,clientes.telefono,`o.s`,`tipo_o.s`
 $resultado = mysqli_query($conexion, $sql_query);
 if(!$resultado)
 die("Error no se pudo realizar la consulta");
+
 ?>
 
-<div class="box-content">
-<table width="50%" border="1" cellpadding="10" cellspacing="0" bordercolor="#666666" style="border-collapse:collapse;"
+<table width="50%" border="1" cellpadding="10" cellspacing="0" bordercolor="#666666" style="border-collapse:collapse" text-align:center>
 <tr>
-<td><b>DISTRITO</b></td>
-<td><b>CLIENTE</b></td>
-<td><b>TELEFONO</b></td>
-<td><b>O.S</b></td>
-<td><b>TIPO O.S</b></td>
-<td><b>PISAPLEX</b></td>
-<td><b>TECNICO</b></td>
-<td><b>EXPEDIENTE</b></td>
-<td><b>TERMINAL OPTICA</b></td>
-<td><b>DISTRITO</b></td>
-<td><b>PUERTO</b></td>
-<td><b>ONT ALFANUMERICO</b></td>
-<td><b>ONT NUMERICO</b></td>
-<td><b>FOLIO CLARO</b></td>
-<td><b>STATUS</b></td>
-<td><b>OBSERVACIONES</b></td>
-<td><b>FOLIO TEK</b></td>
-<td><b>PORTALERO</b></td>
-<td><b>SUPERVISOR</b></td>
-<td><b>METROS AEREOS</b></td>
-<td><b>METROS SUBTERRANEOS</b></td>
-<td><b>FECHA</b></td>
-<td><b>STATUS</b></td>
-<td><b>OBSERVACIONES</b></td>
-<td><b>FOTO ONT</b></td>
+<th><b>DISTRITO</b></th>
+<th><b>CLIENTE</b></th>
+<th><b>TELEFONO</b></th>
+<th><b>O.S</b></th>
+<th><b>TIPO O.S</b></th>
+<th><b>PISAPLEX</b></th>
+<th><b>TECNICO</b></th>
+<th><b>EXPEDIENTE</b></th>
+<th><b>TERMINAL OPTICA</b></th>
+<th><b>PUERTO</b></th>
+<th><b>ONT ALFANUMERICO</b></th>
+<th><b>ONT NUMERICO</b></th>
+<th><b>FOLIO CLARO</b></th>
+<th><b>STATUS</b></th>
+<th><b>OBSERVACIONES</b></th>
+<th><b>FOLIO TEK</b></th>
+<th><b>PORTALERO</b></th>
+<th><b>SUPERVISOR</b></th>
+<th><b>METROS AEREOS</b></th>
+<th><b>METROS SUBTERRANEOS</b></th>
+<th><b>FECHA</b></th>
+<th><b>STATUS</b></th>
+<th><b>OBSERVACIONES</b></th>
+<th><b>FOTO ONT</b></th>
  </tr>
 
 <?php
-while($row=mysqli_fetch_array($resultado)){
-?>
+while($row=mysqli_fetch_array($resultado)){   ?>
 <tr>
 <td><?php echo $row['distrito']; ?> </td>
 <td><?php echo $row['nombre']; ?></td>
@@ -77,14 +75,12 @@ while($row=mysqli_fetch_array($resultado)){
 <td><?php echo $row['fecha']; ?></td>
 <td><?php echo $row['orden_status']; ?></td>
 <td><?php echo $row['observaciones']; ?></td>
-<td><?php echo'<img src="'.$row['foto_ONT'].'" width="300px" height="300px">'; ?>"></td>
+<td><img src="<?php echo $row['foto_ONT'] ?>" width="100" height="50"/></td>
 </tr>
 
 <?php
 }
     ?>
-</div>
-</div>
     </table>
 </body>
 </html>
