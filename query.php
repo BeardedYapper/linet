@@ -1,4 +1,6 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
 <?php
+
 header("Content-Type: aplication/vnd.ms-excel");
 header("Expire: 0");
 header("Cache-control: must-revalidate, post-check=0, pre-check=0");
@@ -6,7 +8,7 @@ header("content-disposition: attachment;filename=Reportes.xls");
 
 include("database_connection.php");
 
-$sql_query = "SELECT distrito,clientes.nombre,clientes.telefono,`o.s`,`tipo_o.s`,pisaplex,empleados.nombre,Empleados_expediente,equipo.terminal_optica,equipo.puerto,equipo_ONT_alfanumerico,equipo.ONT_numerico,folioTek,portalero,supervisor,instalacion.metros_subterraneo,instalacion.metros_aereos,clientes.claro_folio, claro.status,claro.observacion, fecha,orden_status,observaciones,equipo.foto_ONT
+$sql_query = "SELECT distrito,clientes.nombres,clientes.telefono,`o.s`,`tipo_o.s`,pisaplex,empleados.nombre,Empleados_expediente,equipo.terminal_optica,equipo.puerto,equipo_ONT_alfanumerico,equipo.ONT_numerico,folioTek,portalero,supervisor,instalacion.metros_subterraneo,instalacion.metros_aereos,clientes.claro_folio, claro.status,claro.observacion, fecha,orden_status,observaciones,equipo.foto_ONT
  FROM Orden FULL 
  JOIN clientes on Clientes_telefono=clientes.telefono 
  JOIN empleados on empleados_expediente= empleados.expediente
@@ -58,7 +60,7 @@ while($row=mysqli_fetch_array($resultado)){   ?>
 <td>MERIDA</td>
 <td>BUENAVISTA</td>
 <td><?php echo $row['distrito']; ?> </td>
-<td><?php echo $row['nombre']; ?></td>
+<td><?php echo $row['nombres']; ?></td>
 <td><?php echo $row['telefono']; ?></td>
 <td><?php echo $row['o.s']; ?></td>
 <td><?php echo $row['tipo_o.s']; ?></td>

@@ -9,4 +9,5 @@ $conexion= mysqli_connect($servidor,$usuario,$contrasena,$basedatos);
 if(!$conexion){
 die("Error No se puede conectar");
 }
+$conexion->set_charset("utf8");
 ?>
