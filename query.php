@@ -1,6 +1,5 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
 <?php
-
 header("Content-Type: aplication/vnd.ms-excel");
 header("Expire: 0");
 header("Cache-control: must-revalidate, post-check=0, pre-check=0");
