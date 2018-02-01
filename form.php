@@ -8,66 +8,85 @@
     <link href="css/bootstrap.min.css" rel "stylesheet">
 </head>
 <body>
-<div class="container">
-<table align="center">
 <div class="text-center" style="padding:50px">
-<div class="Jumbotron">
-<h2> FORMULARIO REPORTE</h2>
-<br>
-<br>
-<form  action="blabla.php">
+    <div class="Jumbotron">
 
-<div class="form-group">
-<label for="distrito" class="control-label">Indique Distrito</label>
-<input type="text" class="form-control" id="distrito" placeholder="Ingrese el distrito">
-</div>
+    <h1> FORMULARIO REPORTE</h1>
+    <br>
+    <br>
+    <form  action="blabla.php">
 
-<div class="form-group">
-<label for="cliente">Nombre del Cliente</label>
-<input type="text" class="form-control" id="cliente" placeholder="Ingrese el Nombre del cliente">
-</div>
+        <div class="container text-center">    
+            <div class="row">
+                <div class="col-sm-4 well">
+                    <div class="well">
+                        <br>
+                        <br>
+                        <h3> Datos del Cliente</h3> 
+                        <br>
+                        <div class="form-group">
+                            <label for="distrito" class="control-label"><b>Indique Distrito</label>
+                            <input type="text" class="form-control" id="distrito" placeholder="Ingrese el distrito">
+                        </div>
+                        <div class="form-group">
+                            <label for="cliente"><b>Nombre del Cliente</label>
+                            <input type="text" class="form-control" id="cliente" placeholder="Ingrese el Nombre del cliente">
+                        </div>
+                        <div class="form-group">
+                        <label for="telefono">Número de Telefono</label>
+                        <input type="tel" class="form-control" id="telefono" placeholder="Ingrese el número de telefono">
+                        </div>
+                    </div>
+                </div>
+            <br>
+            <br>
 
-<div class="form-group">
-<label for="telefono">Número de Telefono</label>
-<input type="tel" class="form-control" id="telefono" placeholder="Ingrese el número de telefono">
-</div>
+            <div class="col sm-4">
+                <div class="row">
+                    <div class="col-sm-5">
+                        <h3> Información de la orden </h3>
+                            <div class="form-group">
+                                <label for="o.s"><b>Folio de Orden de Servicio</label>
+                                <input type="text" class="form-control" id="o.s" placeholder="Inserte el folio de la orden">
+                            </div>
 
-<div class="form-group">
-<label for="o.s">Folio de Orden de Servicio</label>
-<input type="text" class="form-control" id="o.s">
-</div>
+                            <div class="form-group">
+                                <label for="pisaplex">Anotar Pisaplex</label>
+                                <input type="text" class="form-control" id="pisaplex" placeholder="Ingrese el Pisaplex">
+                            </div>
 
-<div class="form-group">
-<label for="pisaplex">Anotar Pisaplex</label>
-<input type="text" class="form-control" id="pisaplex">
-</div>
+                            <div class="form-group">
+                                <label for="tipo_o.s">Tipo de Orden de Servicio</b></label>
+                                <select class="form-control" id="tipo_o.s">
+                                <option> TS1L7SG</option>
+                                <option> TS2L7SG</option>
+                                <option> A91LPBG</option>
+                                <option> A92LPBG</option>
+                                <option> A0MLPBG</option>
+                                <option> A01MLPBG</option>
+                                <option> D11LPBG</option>
+                                <option> D21LPBG</option>
+                                <option> TV1LPBGPI</option>
+                                <option> TI2L</option>
+                                <option> TS1MLPBG</option>
+                                <option> TV2LPBGPI</option>
+                                <option> TSML7SG</option>
+                                <option> D210PBGPI</option>
+                                <option> A01LPBGPE</option>
+                                <option> D220PBGPI</option>
+                                <option> D110PBG</option>
+                                <option> A02MLPBG</option>
+                                <option> A010PBG</option>
+                                <option> A720PBG</option>
+                                </select>
+                            </div>
+                    </div>
+                </div>
+            </div>
 
-<div class="form-group">
-<label for="tipo_o.s">Tipo de Orden de Servicio</label>
-<select class="form-control" id="tipo_o.s">
-<option> TS1L7SG</option>
-<option> TS2L7SG</option>
-<option> A91LPBG</option>
-<option> A92LPBG</option>
-<option> A0MLPBG</option>
-<option> A01MLPBG</option>
-<option> D11LPBG</option>
-<option> D21LPBG</option>
-<option> TV1LPBGPI</option>
-<option> TI2L</option>
-<option> TS1MLPBG</option>
-<option> TV2LPBGPI</option>
-<option> TSML7SG</option>
-<option> D210PBGPI</option>
-<option> A01LPBGPE</option>
-<option> D220PBGPI</option>
-<option> D110PBG</option>
-<option> A02MLPBG</option>
-<option> A010PBG</option>
-<option> A720PBG</option>
-</select>
-</div>
 
+
+<h3> Información del Técnico </h3>
 <div class="form-group">
 <label for="tecnico">Nombre del Técnioc</label>
 <select class="form-control" id="tecnico">
@@ -83,7 +102,6 @@
 <option> SOSA HERRERA MARTIN ANTONIO</option>
 </select>
 </div>
-
 <div class="form-group">
 <label for="expediente">Expediente a Liquidar</label>
 <select class="form-control" id="expediente">
@@ -106,12 +124,17 @@
 <option> 2251401</option>
 </select>
 </div>
+</td>
+</tr>
 
+<tr>
+<td>
+<h3>Información de la instalación</h3>
 <div class="form-group">
-<label for="terminal_optica"><b>Terminal en la que se conecto</b></label>
+<label for="terminal_optica">Terminal en la que se conecto</label>
 <input type="text" class="form-control" id="terminal_optica">
 </div>
-
+</b>
 <div class="form-group">
 <label> <input type="radio" id="puerto"> 1 </label>
 <label> <input type="radio" id="puerto"> 2 </label>
@@ -124,14 +147,14 @@
 </div>
 <br>
 <div class="form-group">
-<label>Tipo de Instalación</label>
+<label><b>Tipo de Instalación</b></label>
 <br>
 <input type="radio">Aereo
 <input type="radio">Subterraneo
 </div>
 <br>
 <div class="form-group">
-<label for"metraje">Metraje de Instalación</label>
+<label for"metraje"><b>Metraje de Instalación</label>
 <select class="form-control" id="metraje">
 <option> 25</option>
 <option>50</option>
@@ -160,7 +183,8 @@
 <label for="ONT_numerico">Número de Serie Telmex</label>
 <input type="text" class="form-control" id="ONT_numerico">
 </div>
-
+</td>
+</tr>
 <div class="form-group">
 <label for="claro_folio">Anotar Folio Claro ó OTT</label>
 <input type="text" class="form-control" id="folio_claro">
@@ -168,20 +192,21 @@
 <br>
 <div class="form-group">
 <label>Estado del Claro Video</label>
+</b>
 <br>
 <input type="radio">Activado <br>
 <input type="radio">Pendiente de Activación de CV
 </div>
 <br>
 <div class="form-group">
-<label>Tipo de Instalación</label>
+<label><b>Tipo de Instalación</b></label>
 <br>
 <input type="radio">Aereo
 <input type="radio">Subterraneo
 </div>
 
 <div class="form-group">
-<label for"observacion_claro">Observación de Claro Video</label>
+<label for"observacion_claro"><b>Observación de Claro Video</label>
 <select class="form-control" id="observacion_claro">
 <option> ACTIVADO</option>
 <option>YA CONTABA CON EL SERVICIO CLARO VIDEO</option>
@@ -198,11 +223,20 @@
 </select>
 </div>
 
+<div class="form-group">
+<label for"fecha">Fecha de Liquidación</label>
+<input type="date" class="form-control" id="fecha">
+</div>
 
+<div class="form-group">
+<label for"folio">Folio de validación</label>
+<input type="text" class="form-control" id="folio">
+</div>
+</b>
+</table>
 </form>
 </div>
 </div>
-</table>
 </div>
 <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 </body>
