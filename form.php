@@ -22,17 +22,17 @@
                         <br>
                         <div class="form-group">
                             <label for="distrito" class="control-label"><b>Indique Distrito</b></label>
-                            <input type="text" class="form-control" id="distrito" placeholder="Ingrese el distrito"/>
+                            <input type="text" class="form-control" style="text-transform:uppercase;" id="distrito" placeholder="Ingrese el distrito"/>
                         </div>
 
                         <div class="form-group">
                             <label for="cliente"><b>Nombre del Cliente</b></label>
-                            <input type="text" class="form-control" id="cliente" placeholder="Ingrese el Nombre del cliente"/>
+                            <input type="text" class="form-control" style="text-transform:uppercase;" id="cliente" placeholder="Ingrese el Nombre del cliente"/>
                         </div>
 
                         <div class="form-group">
                         <label for="telefono"><b>Número de Telefono</b></label>
-                        <input type="tel" class="form-control" id="telefono" placeholder="Ingrese el número de telefono"/>
+                        <input type="tel" class="form-control" style="text-transform:uppercase;" id="telefono" placeholder="Ingrese el número de telefono"/>
                         </div>
                     </div>
                 
@@ -40,12 +40,12 @@
                         <br>
                             <div class="form-group">
                                 <label for="o.s"><b>Folio de Orden de Servicio</b></label>
-                                <input type="text" class="form-control" id="o.s" placeholder="Inserte el folio de la orden">
+                                <input type="text" class="form-control" style="text-transform:uppercase;" id="o.s" placeholder="Inserte el folio de la orden">
                             </div>
 
                             <div class="form-group">
                                 <label for="pisaplex"><b>Anotar Pisaplex</b></label>
-                                <input type="text" class="form-control" id="pisaplex" placeholder="Ingrese el Pisaplex">
+                                <input type="text" class="form-control" style="text-transform:uppercase;" id="pisaplex" placeholder="Ingrese el Pisaplex">
                             </div>
 
                             <div class="form-group">
@@ -119,7 +119,7 @@
                             <h3>Información de la instalación</h3><br>
                             <div class="form-group">
                             <label for="terminal_optica"><b>Terminal en la que se conecto</b></label>
-                            <input type="text" class="form-control" id="terminal_optica" placeholder="Ejemplo: B2">
+                            <input type="text" class="form-control" style="text-transform:uppercase;" id="terminal_optica" placeholder="Ejemplo: B2">
                             </div>
                             
                             
@@ -141,7 +141,7 @@
                             <br>
                             <label class="radio-inline"><input type="radio" name="instalacion">Aereo</label>
                             <label class="radio-inline"><input type="radio" name="instalacion">Subterraneo</label>
-                            
+                            <br>
                             <br>
                             <div class="form-group">
                             <label for"metraje"><b>Metraje de Instalación</b></label>
@@ -162,12 +162,12 @@
                             
                             <div class="form-group">
                             <label for="ONT_alfanumerico"><b>Indicar Número de Serie</b></label>
-                            <input type="text" class="form-control" id="ONT_alfanumerico" placeholder="Ingre el número de serie alfanumerico">
+                            <input type="text" class="form-control" style="text-transform:uppercase;" id="ONT_alfanumerico" placeholder="Ingre el número de serie alfanumerico">
                             </div>
 
                             <div class="form-group">
                             <label for="ONT_numerico"><b>Número de Serie Telmex</b></label>
-                            <input type="text" class="form-control" id="ONT_numerico" placeholder="Ingrese el numero de serie numerico">
+                            <input type="text" class="form-control" style="text-transform:uppercase;" id="ONT_numerico" placeholder="Ingrese el numero de serie numerico">
                             </div>
 
                             
@@ -175,23 +175,20 @@
                             <h3>Información de Claro Video</h3>     <br>                            
                             <div class="form-group">
                             <label for="claro_folio"><b>Anotar Folio Claro ó OTT</b></label>
-                            <input type="text" class="form-control" id="folio_claro" placeholder="Ingrese el Folio ClaroVideo">
+                            <input type="text" class="form-control" style="text-transform:uppercase;"  id="folio_claro" placeholder="Ingrese el Folio ClaroVideo">
                             </div>
                             <br>
-                            <div class="form-group">
                             <label><b>Estado del Claro Video</b></label>
                             <br>
-                            <input type="radio">Activado <br>
-                            <input type="radio">Pendiente de Activación de CV
+                            <div class="radio">
+                            <label><input type="radio" name="optradio">Activado</label>
                             </div>
-                            <br>
-                            <div class="form-group">
-                            <label><b>Tipo de Instalación</b></label>
-                            <br>
-                            <input type="radio">Aereo
-                            <input type="radio">Subterraneo
+                            <div class="radio">
+                            <label><input type="radio" name="optradio">Pendiente de Activacion de CV</label>
                             </div>
 
+                                                    <br>
+                            
                             <div class="form-group">
                             <label for"observacion_claro"><b>Observación de Claro Video</b></label>
                             <select class="form-control" id="observacion_claro">
@@ -217,11 +214,14 @@
 
                             <div class="form-group">
                             <label for"folio"><b>Folio de validación</b></label>
-                            <input type="text" class="form-control" id="folio">
+                            <input type="text" class="form-control" style="text-transform:uppercase;" id="folio">
                             </div>
                             </b>
-             </div>
+             
     </form>
+
+    <p> <a  class="btn btn-success btn-lg" href="" role="button">ENVIAR REPORTE</a></p>
+    </div>
 </div>
 <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 </body>
